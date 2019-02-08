@@ -7,10 +7,18 @@ variable "stack_name" {
 variable "finish_upgrade" {
   description = "Automatically finish upgrade on Rancher when apply new plan"
 }
-variable "label_global_scheduling" {
-  description = "The label to use when schedule this stack as global scheduling"
+variable "scale" {
+  description = "Set the number of instance you should.Don't use it if you should global_scheduling as true"
+  default = ""
 }
-
+variable "label_scheduling" {
+  description = "The label to use when schedule this stack"
+  default = ""
+}
+variable "global_scheduling" {
+  description = "Set to true if you should to deploy on all node that match label_scheduling"
+  default     = "true"
+}
 
 variable "image_version" {
   description = "The image version of Redis to use"
