@@ -31,7 +31,7 @@ data "template_file" "rancher_compose_redis" {
   template = "${file("${path.module}/rancher/redis/rancher-compose.yml")}"
 
   vars {
-    scale = "${var.scale != "" ? "scale: var.scale" : ""}"
+     scale  = "${var.scale != "" ? "scale: ${var.scale}" : ""}"
   }
 }
 resource "rancher_stack" "this" {
