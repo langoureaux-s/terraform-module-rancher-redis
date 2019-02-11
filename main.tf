@@ -21,7 +21,7 @@ data "template_file" "docker_compose_redis" {
     label_scheduling        = "${var.label_scheduling}"
     global_scheduling       = "${var.global_scheduling}"
     image_version           = "${var.image_version}"
-    mem_limit               = "${var.container_memory != "" ? "mem_limit: var.container_memory" ? ""}}"
+    mem_limit               = "${var.container_memory != "" ? "mem_limit: var.container_memory" ? ""}"
     cpu_shares              = "${var.cpu_shares}"
     data_path               = "${var.data_path}"
     max_memory              = "${var.max_memory}"
