@@ -2,6 +2,7 @@ version: '2'
 services:
   redis:
     start_on_create: true
+    ${scale}
     health_check:
       port: 6379
       interval: 30000

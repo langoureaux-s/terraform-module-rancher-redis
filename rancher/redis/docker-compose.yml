@@ -6,10 +6,11 @@ services:
     command: redis-server --appendonly yes --maxmemory ${max_memory}
     volumes:
       - ${data_path}:/data
-    mem_limit: ${container_memory}
+    ${mem_limit}
     cpu_shares: ${cpu_shares}
     labels:
       io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$$$${stack_name}/$$$${service_name}
       io.rancher.scheduler.affinity:host_label: ${label_scheduling}
       io.rancher.container.hostname_override: container_name
       io.rancher.scheduler.global: ${global_scheduling}
+      io.rancher.container.pull_image: always
